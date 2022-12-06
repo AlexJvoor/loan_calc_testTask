@@ -1,9 +1,9 @@
 import java.io.IOException;
 
-public class ExitException extends IOException {
+public class Exit extends IOException {
 
     private final String errorCode;
-    public ExitException(String message, String errorCode) {
+    public Exit(String message, String errorCode) {
         super(message);
         this.errorCode = errorCode;
     }

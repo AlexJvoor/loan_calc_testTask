@@ -1,5 +1,5 @@
-public class Calculations {
-    public static void calcOverpay(Client client) throws ExitException{
+public class Calculator {
+    public static void calcOverpay(Client client) throws Exit {
         double overpay = -client.loan;
         double currLoan = client.loan;
 
@@ -17,7 +17,7 @@ public class Calculations {
                 currLoan -= yearPay;
             }
             if (currLoan >= client.loan) {
-                throw new ExitException("", "UNPAYABLE_LOAN");
+                throw new Exit("", "UNPAYABLE_LOAN");
             }
             currLoan += currLoan * client.percent;
         }
