@@ -4,14 +4,14 @@ public class Client {
     double percent;
     boolean human;
 
-    Client(String loanStr, String monthPayStr, String percentStr, String clientType) {
+    Client(String loanStr, String monthPayStr, String percentStr, String clientType) throws ExitException{
         monthPay = Double.parseDouble(monthPayStr);
         percent = Double.parseDouble(percentStr) / 100;
         loan = Double.parseDouble(loanStr);
         switch (clientType) {
             case "human" -> human = true;
             case "business" -> human = false;
-            default -> Exit.exit("Unknown client type");
+            default -> throw new ExitException("Unknown client type", "UNKNOWN_CLIENT_TYPE");
         }
     }
 }
