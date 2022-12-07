@@ -11,7 +11,7 @@ public class Client {
         switch (clientType) {
             case "human" -> human = true;
             case "business" -> human = false;
-            default -> throw new Exit("Unknown client type", "UNKNOWN_CLIENT_TYPE");
+            default -> throw new Exit("Unknown client type");
         }
     }
 }
