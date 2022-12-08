@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class Calculator {
-    public static void calcOverpay(Client client) throws InputException {
+    public static void calcOverpay(Client client) throws IOException {
         double overpay = -client.loan;
         double currLoan = client.loan;
 
@@ -17,7 +19,7 @@ public class Calculator {
                 currLoan -= yearPay;
             }
             if (currLoan >= client.loan) {
-                throw new InputException("Loan is unpayable");
+                throw new IOException("Loan is unpayable");
             }
             currLoan += currLoan * client.percent;
         }
