@@ -17,7 +17,7 @@ public class Calculator {
                 currLoan -= yearPay;
             }
             if (currLoan >= client.loan) {
-                throw new InputException("UnpayableLoanException");
+                throw new InputException("Loan is unpayable");
             }
             currLoan += currLoan * client.percent;
         }
