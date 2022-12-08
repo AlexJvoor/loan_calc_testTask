@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exit {
+    public static void main(String[] args) throws InputException {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -9,7 +9,7 @@ public class Main {
             String[] arguments = argsString.split(" ");
 
             if (arguments.length != 4) {
-                throw new Exit("InvalidSyntaxException\nUsage:\nloan, monthPay, percent, clientType");
+                throw new InputException("InvalidSyntaxException\nUsage:\nloan, monthPay, percent, clientType");
             }
             Client client = new Client(arguments[0], arguments[1], arguments[2], arguments[3]);
             Checker.evalClientData(client);

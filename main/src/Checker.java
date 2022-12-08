@@ -1,15 +1,15 @@
 
 public class Checker {
 
-    public static void evalClientData(Client client) throws Exit {
+    public static void evalClientData(Client client) throws InputException {
         if (client.loan <= 0) {
-            throw new Exit("InvalidLoanException");
+            throw new InputException("InvalidLoanException");
         }
         if (client.monthPay <= 0) {
-            throw new Exit("InvalidMonthPayException");
+            throw new InputException("InvalidMonthPayException");
         }
         if (client.percent <= 0) {
-            throw new Exit("InvalidPercentException");
+            throw new InputException("InvalidPercentException");
         }
     }
 }
